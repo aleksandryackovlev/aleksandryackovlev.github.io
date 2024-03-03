@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 
-import style from './box.module.css';
+import * as style from './box.module.css';
 
 const sizesPropTypes = PropTypes.oneOf([
   'none',
@@ -23,7 +23,7 @@ const colorsPropTypes = PropTypes.oneOf([
   'secondary',
 ]);
 
-const Box = ({
+function Box({
   padding,
   paddingTop,
   paddingRight,
@@ -37,27 +37,28 @@ const Box = ({
   withRadius,
   background,
   children,
-}) => (
-  <div
-    className={classNames(
-      style.box,
-      padding && style[`box_padding_${padding}`],
-      paddingTop && style[`box_paddingTop_${paddingTop}`],
-      paddingRight && style[`box_paddingRight_${paddingRight}`],
-      paddingBottom && style[`box_paddingBottom_${paddingBottom}`],
-      paddingLeft && style[`box_paddingLeft_${paddingLeft}`],
-      border && style[`box_border_${border}`],
-      borderTop && style[`box_borderTop_${borderTop}`],
-      borderRight && style[`box_borderRight_${borderRight}`],
-      borderBottom && style[`box_borderBottom_${borderBottom}`],
-      borderLeft && style[`box_borderLeft_${borderLeft}`],
-      withRadius && style.box_radius_yes,
-      background && style[`box_background_${background}`]
-    )}
-  >
-    {children}
-  </div>
-);
+}) {
+  return (
+    <div
+      className={classNames(
+        padding && style[`box_padding_${padding}`],
+        paddingTop && style[`box_paddingTop_${paddingTop}`],
+        paddingRight && style[`box_paddingRight_${paddingRight}`],
+        paddingBottom && style[`box_paddingBottom_${paddingBottom}`],
+        paddingLeft && style[`box_paddingLeft_${paddingLeft}`],
+        border && style[`box_border_${border}`],
+        borderTop && style[`box_borderTop_${borderTop}`],
+        borderRight && style[`box_borderRight_${borderRight}`],
+        borderBottom && style[`box_borderBottom_${borderBottom}`],
+        borderLeft && style[`box_borderLeft_${borderLeft}`],
+        withRadius && style.box_radius_yes,
+        background && style[`box_background_${background}`]
+      )}
+    >
+      {children}
+    </div>
+  );
+}
 
 Box.propTypes = {
   padding: sizesPropTypes,

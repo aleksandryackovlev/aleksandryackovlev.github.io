@@ -1,12 +1,12 @@
 ---
-id: "my-first-post"
-date: "2019-05-04"
-title: "My first blog post"
+id: "how-to-mock-api"
+date: "2024-04-03"
+title: "How to mock API"
 description: "E-commerce sites have taken retail online and with such its audience. Once representatives used to be able to physically approach customers to see if they needed their assistance, now when visitors are on a website many companies are not aware of their existence unless the visitor makes contact."
 tags:
-  - Cucumber
-  - Cypress
-  - Jenkins
+  - swagger
+  - ccd
+  - mock
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris egestas magna eu laoreet suscipit. Proin sapien purus, auctor eu viverra sit amet, suscipit pellentesque nisi. Quisque a velit vitae erat tempus gravida. Mauris tempus mi ligula, et malesuada nunc consequat ut. Nulla feugiat tempus diam vel porttitor. Sed sodales mauris ac tincidunt lacinia. Proin congue, enim vitae vulputate ullamcorper, nibh ante vestibulum lectus, eget sollicitudin ligula tortor dictum urna. Ut lobortis sit amet eros scelerisque semper.

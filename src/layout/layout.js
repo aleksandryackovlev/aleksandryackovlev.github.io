@@ -16,9 +16,9 @@ import me from '../images/yackovlev.png';
 import Container from './container';
 import Header from './header';
 import Footer from './footer';
-import styles from './layout.module.css';
+import * as styles from './layout.module.css';
 
-const Layout = ({ children }) => {
+function Layout({ children }) {
   const data = useStaticQuery(graphql`
     query SiteSocialLinksQuery {
       site {
@@ -67,7 +67,7 @@ const Layout = ({ children }) => {
               <Box borderBottom="primary" paddingTop="xs" paddingBottom="m">
                 <Typography align="center">
                   <img
-                    xs="150"
+                    width="150"
                     alt={data.site.siteMetadata.author.name}
                     height="150"
                     src={me}
@@ -133,7 +133,7 @@ const Layout = ({ children }) => {
                     </Typography>
                   </Typography>
                   <Row isWrap justify="center">
-                    {data.allMarkdownRemark.distinct.map(tag => (
+                    {data.allMarkdownRemark.distinct.map((tag) => (
                       <Column key={tag} xs="auto">
                         <Box paddingBottom="s">
                           <Button
@@ -156,7 +156,7 @@ const Layout = ({ children }) => {
       <Footer {...data.site.siteMetadata} />
     </div>
   );
-};
+}
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,

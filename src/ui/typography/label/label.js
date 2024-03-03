@@ -3,20 +3,21 @@ import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 
-import style from './label.module.css';
+import * as style from './label.module.css';
 
-const Label = ({ fontSize, isBold, className, children }) => (
-  <span
-    className={classNames(
-      style.label,
-      fontSize && style[`label_font_${fontSize}`],
-      isBold && style.label_bold_yes,
-      className
-    )}
-  >
-    {children}
-  </span>
-);
+function Label({ fontSize, isBold, className, children }) {
+  return (
+    <span
+      className={classNames(
+        fontSize && style[`label_font_${fontSize}`],
+        isBold && style.label_bold_yes,
+        className
+      )}
+    >
+      {children}
+    </span>
+  );
+}
 
 Label.propTypes = {
   className: PropTypes.string,

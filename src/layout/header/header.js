@@ -16,63 +16,66 @@ import { Row, Column } from '../../ui/grid';
 
 import logo from '../../images/logo.png';
 
-import styles from './header.module.css';
+import * as styles from './header.module.css';
 
 const icons = { github, twitter, linkedin };
 
-const Header = ({ author, description }) => (
-  <header>
-    <Box paddingBottom="m">
-      <Box paddingTop="m" paddingBottom="m" borderBottom="primary">
-        <Row justify="spaceBetween" alignItems="center">
-          <Column xs="auto">
-            <Row alignItems="center" paddings="s">
-              <Column xs="auto">
-                <Link to="/">
-                  <img src={logo} alt={author.name} className={styles.logo} />
-                </Link>
-              </Column>
-              <Column xs="auto">
-                <div>
-                  <Typography
-                    component="label"
-                    color="secondary"
-                    isCaps
-                    fontSize="xl"
-                  >
-                    {author.name}
-                  </Typography>
-                </div>
-                <div>
-                  <Typography component="label" fontSize="s">
-                    {description}
-                  </Typography>
-                </div>
-              </Column>
-            </Row>
-          </Column>
-          <Column xs="auto">
-            {author.social.map(({ icon, link }) => (
-              <a
-                key={link}
-                href={link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.socialLink}
-              >
-                <FontAwesomeIcon
-                  className={styles.socialIcon}
-                  icon={icons[icon]}
-                  size="lg"
-                />
-              </a>
-            ))}
-          </Column>
-        </Row>
+function Header({ author, description }) {
+  return (
+    <header>
+      <Box paddingBottom="m">
+        <Box paddingTop="m" paddingBottom="m" borderBottom="primary">
+          <Row justify="spaceBetween" alignItems="center">
+            <Column xs="auto">
+              <Row alignItems="center" paddings="s">
+                <Column xs="auto">
+                  <Link to="/">
+                    <img src={logo} alt={author.name} className={styles.logo} />
+                  </Link>
+                </Column>
+                <Column xs="auto">
+                  <div>
+                    <Typography
+                      component="label"
+                      color="secondary"
+                      isCaps
+                      fontSize="xl"
+                    >
+                      {author.name}
+                    </Typography>
+                  </div>
+                  <div>
+                    <Typography component="label" fontSize="s">
+                      {description}
+                    </Typography>
+                  </div>
+                </Column>
+              </Row>
+            </Column>
+            <Column xs="auto">
+              {author.social.map(({ icon, link }) => (
+                <a
+                  key={link}
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialLink}
+                  aria-label={`Alex Yackovlev ${icon}`}
+                >
+                  <FontAwesomeIcon
+                    className={styles.socialIcon}
+                    icon={icons[icon]}
+                    size="lg"
+                  />
+                </a>
+              ))}
+            </Column>
+          </Row>
+        </Box>
       </Box>
-    </Box>
-  </header>
-);
+    </header>
+  );
+}
 
 Header.propTypes = {
   author: PropTypes.shape({

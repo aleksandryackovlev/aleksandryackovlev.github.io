@@ -69,8 +69,8 @@ exports.createPages = async ({
             (res, tag) => `${res}, "${tag}"`,
             ''
           )}"Cucumber"]}, id: {ne: "${
-          frontmatter.id
-        }"}}}, limit: 3, sort: {fields: frontmatter___date}) {
+            frontmatter.id
+          }"}}}, limit: 3, sort: {fields: frontmatter___date}) {
             edges {
               node {
                 timeToRead
@@ -137,7 +137,7 @@ exports.createPages = async ({
     });
   });
 
-  posts.forEach(post => {
+  posts.forEach((post) => {
     createPage({
       path: `/${post.id}`,
       component: path.resolve(__dirname, 'src/templates/blog-item.js'),

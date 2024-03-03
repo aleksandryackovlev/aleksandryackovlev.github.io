@@ -7,9 +7,9 @@ import Label from './label';
 import Paragraph from './paragraph';
 import Title from './title';
 
-import style from './typography.module.css';
+import * as style from './typography.module.css';
 
-const Typography = ({
+function Typography({
   align,
   color,
   isInline,
@@ -20,7 +20,7 @@ const Typography = ({
   component,
   marginBottom,
   ...rest
-}) => {
+}) {
   const componentClassNames = classNames(
     style.typography,
     align && style[`typography_align_${align}`],
@@ -43,7 +43,7 @@ const Typography = ({
     default:
       return <div className={componentClassNames}>{rest.children}</div>;
   }
-};
+}
 
 Typography.propTypes = {
   align: PropTypes.oneOf(['left', 'right', 'center', 'justify']),
