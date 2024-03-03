@@ -5,16 +5,12 @@ module.exports = {
     author: {
       name: `Alex Yackovlev`,
       position: `Frontend developer`,
-      company: `Mail.ru Group`,
-      email: `aleksandryackovlev@yandex.ru`,
+      company: `VK`,
+      email: `alex@yackovlev.com`,
       social: [
         {
           icon: `github`,
           link: `https://github.com/aleksandryackovlev`,
-        },
-        {
-          icon: `twitter`,
-          link: `https://twitter.com/_yackovlev`,
         },
         {
           icon: `linkedin`,
@@ -22,7 +18,7 @@ module.exports = {
         },
       ],
     },
-    siteUrl: `https://yackovlev.ru`,
+    siteUrl: `https://yackovlev.com`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
