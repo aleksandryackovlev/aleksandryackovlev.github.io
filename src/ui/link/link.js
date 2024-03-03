@@ -4,14 +4,16 @@ import PropTypes from 'prop-types';
 import { Link as GatsbyLink } from 'gatsby';
 import classNames from 'classnames';
 
-import styles from './link.module.css';
+import * as styles from './link.module.css';
 
-const Link = ({ type, ...rest }) => (
-  <GatsbyLink
-    className={classNames(styles.link, styles[`link_type_${type}`])}
-    {...rest}
-  />
-);
+function Link({ type, ...rest }) {
+  return (
+    <GatsbyLink
+      className={classNames(styles.link, styles[`link_type_${type}`])}
+      {...rest}
+    />
+  );
+}
 
 Link.propTypes = {
   type: PropTypes.oneOf(['primary', 'secondary']),

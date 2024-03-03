@@ -3,20 +3,22 @@ import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 
-import style from './paragraph.module.css';
+import * as style from './paragraph.module.css';
 
-const Paragraph = ({ fontSize, className, isBold, children }) => (
-  <p
-    className={classNames(
-      style.paragraph,
-      fontSize && style[`paragraph_font_${fontSize}`],
-      isBold && style.paragraph_bold_yes,
-      className
-    )}
-  >
-    {children}
-  </p>
-);
+function Paragraph({ fontSize, className, isBold, children }) {
+  return (
+    <p
+      className={classNames(
+        style.paragraph,
+        fontSize && style[`paragraph_font_${fontSize}`],
+        isBold && style.paragraph_bold_yes,
+        className
+      )}
+    >
+      {children}
+    </p>
+  );
+}
 
 Paragraph.propTypes = {
   className: PropTypes.string,

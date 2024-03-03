@@ -4,18 +4,20 @@ import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Link } from 'gatsby';
 
-import styles from './button.module.css';
+import * as styles from './button.module.css';
 
-const Button = ({ href, type, children, ...rest }) => (
-  <Link
-    to={href}
-    className={classNames(styles.button, styles[`button_type_${type}`])}
-    activeClassName={styles.button_active_yes}
-    {...rest}
-  >
-    {children}
-  </Link>
-);
+function Button({ href, type, children, ...rest }) {
+  return (
+    <Link
+      to={href}
+      className={classNames(styles.button, styles[`button_type_${type}`])}
+      activeClassName={styles.button_active_yes}
+      {...rest}
+    >
+      {children}
+    </Link>
+  );
+}
 
 Button.propTypes = {
   href: PropTypes.string.isRequired,

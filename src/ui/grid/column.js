@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 
-import style from './grid.module.css';
+import * as style from './grid.module.css';
 
-const Column = ({ children, alignSelf, xs, sm, md, lg, xl }) => {
+function Column({ children, alignSelf, xs, sm, md, lg, xl }) {
   return (
     <div
       className={classNames(
@@ -21,7 +21,7 @@ const Column = ({ children, alignSelf, xs, sm, md, lg, xl }) => {
       {children}
     </div>
   );
-};
+}
 
 Column.propTypes = {
   alignSelf: PropTypes.oneOf(['none', 'start', 'end', 'center']),

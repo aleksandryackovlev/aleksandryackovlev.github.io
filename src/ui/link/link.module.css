@@ -1,15 +1,16 @@
-link {
+.link {
   color: #000;
   text-decoration: underline;
   cursor: pointer;
   -webkit-tap-highlight-color: transparent;
 }
 
-link:hover {
+.link:hover {
   text-decoration: none;
   color: #000;
 }
 
+/* stylelint-disable selector-class-pattern */
 .link_type_secondary {
   text-decoration: none;
   color: #333;
@@ -19,3 +20,4 @@ link:hover {
   text-decoration: underline;
   color: #333;
 }
+/* stylelint-enable selector-class-pattern */

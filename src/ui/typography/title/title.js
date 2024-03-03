@@ -3,18 +3,18 @@ import PropTypes from 'prop-types';
 
 import classNames from 'classnames';
 
-import style from './title.module.css';
+import * as style from './title.module.css';
 
-const Title = ({ fontSize, className, level, isBold, children }) =>
-  createElement(`h${level}`, {
+function Title({ fontSize, className, level, isBold, children }) {
+  return createElement(`h${level}`, {
     className: classNames(
-      style.title,
       fontSize && style[`title_font_${fontSize}`],
       isBold && style.title_bold_yes,
       className
     ),
     children,
   });
+}
 
 Title.propTypes = {
   className: PropTypes.string,
