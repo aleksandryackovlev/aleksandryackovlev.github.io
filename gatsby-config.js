@@ -25,15 +25,13 @@ module.exports = {
     {
       resolve: `gatsby-plugin-sitemap`,
       options: {
-        output: `/sitemap.xml`,
-        serialize: ({ allSitePage, site }) =>
-          allSitePage.edges.map(({ node }) => {
-            return {
-              url: `${site.siteMetadata.siteUrl}${node.path}`,
-              changefreq: node.path.includes('tag/') ? `weekly` : `monthly`,
-              priority: node.path.includes('tag/') ? 0.5 : 0.7,
-            };
-          }),
+        serialize: (page, { resolvePagePath }) => {
+          return {
+            url: resolvePagePath(page),
+            changefreq: page.path.includes('tag/') ? `weekly` : `monthly`,
+            priority: page.path.includes('tag/') ? 0.5 : 0.7,
+          };
+        },
       },
     },
     {
