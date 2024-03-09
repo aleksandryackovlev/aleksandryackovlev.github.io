@@ -4,8 +4,11 @@ module.exports = {
     description: `Thoughts on code`,
     author: {
       name: `Alex Yackovlev`,
-      position: `Frontend developer`,
-      company: `VK`,
+      position: `Lead Frontend Engineer`,
+      company: {
+        name: `@ VK Tech`,
+        url: `https://vk.company/en/`,
+      },
       email: `alex@yackovlev.com`,
       social: [
         {
@@ -37,7 +40,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        policy: [{ userAgent: '*', disallow: '/' }],
+        policy: [{ userAgent: '*', allow: '/' }],
       },
     },
     {

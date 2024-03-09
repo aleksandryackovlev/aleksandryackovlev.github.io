@@ -26,7 +26,10 @@ function Layout({ children }) {
           author {
             name
             position
-            company
+            company {
+              name
+              url
+            }
             email
             social {
               icon
@@ -85,7 +88,7 @@ function Layout({ children }) {
                     {data.site.siteMetadata.author.position}
                   </Typography>
                   <Typography color="secondary" marginBottom="xs">
-                    {data.site.siteMetadata.author.company}
+                    {data.site.siteMetadata.author.company.name}
                   </Typography>
                   <Typography isTruncate color="secondary" marginBottom="none">
                     <a href={`mailto:${data.site.siteMetadata.author.email}`}>
